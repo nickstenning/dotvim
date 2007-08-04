@@ -3,8 +3,9 @@ if exists("did_load_filetypes")
     finish
 endif
 
-augroup markdown
-    au BufRead,BufNewFile *.mkd,*.markdown  setf mkd
-augroup END
+au BufRead,BufNewFile *.mkd,*.markdown setf mkd
+au BufRead,BufNewFile *.haml setf haml 
+au BufRead,BufNewFile *.sass setf sass 
 
 " vim:et:ts=4:sts=4:sw=4:
+
