@@ -32,7 +32,13 @@ set tw=78
 set fo+=tcoqlwn2
 set nojoinspaces
 
-set guifont=Monaco:h12.00
+if has('gui')
+    if has('gui_macvim')
+        set guifont=Monaco:h12.00
+    elseif has('gui_win32')
+        set guifont=Inconsolata:h12.00
+    endif
+endif
 
 set tags=./tags,./../tags,./../../tags,./../../../tags,tags
 
@@ -57,8 +63,13 @@ map <leader>t4 <Esc>:set et sts=4 sw=4<CR>
 map <leader>t8 <Esc>:set et sts=8 sw=8<CR>
 
 " Helpers for editing this file
-map <leader>ve <Esc>:e ~/.vimrc<CR>
-map <leader>vs <Esc>:source ~/.vimrc<CR>
+if has('win32')
+    map <leader>ve <Esc>:e ~/_vimrc<CR>
+    map <leader>vs <Esc>:source ~/_vimrc<CR>
+else
+    map <leader>ve <Esc>:e ~/.vimrc<CR>
+    map <leader>vs <Esc>:source ~/.vimrc<CR>
+endif
 
 " Toggle search highlight
 map <leader>h <Esc>:set hls!<CR>
