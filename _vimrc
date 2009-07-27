@@ -63,13 +63,8 @@ map <leader>t4 <Esc>:set et sts=4 sw=4<CR>
 map <leader>t8 <Esc>:set et sts=8 sw=8<CR>
 
 " Helpers for editing this file
-if has('win32')
-    map <leader>ve <Esc>:e ~/_vimrc<CR>
-    map <leader>vs <Esc>:source ~/_vimrc<CR>
-else
-    map <leader>ve <Esc>:e ~/.vimrc<CR>
-    map <leader>vs <Esc>:source ~/.vimrc<CR>
-endif
+map <leader>ve <Esc>:e $MYVIMRC<CR>
+map <leader>vs <Esc>:source $MYVIMRC<CR>
 
 " Toggle search highlight
 map <leader>h <Esc>:set hls!<CR>
