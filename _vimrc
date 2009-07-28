@@ -94,11 +94,11 @@ cmap w!! %!sudo tee > /dev/null %
 noremap Y y$
 
 nnoremap Q gqap
-nnoremap Q gq
+vnoremap Q gq
 
 " visual shifting (reselection after shift)
-nnoremap < <gv
-nnoremap > >gv
+vnoremap < <gv
+vnoremap > >gv
 
 filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
