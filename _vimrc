@@ -62,6 +62,9 @@ map <leader>t2 <Esc>:set et sts=2 sw=2<CR>
 map <leader>t4 <Esc>:set et sts=4 sw=4<CR>
 map <leader>t8 <Esc>:set et sts=8 sw=8<CR>
 
+" Taglist
+map <leader>tt <Esc>:TlistToggle<CR>
+
 " Helpers for editing this file
 map <leader>ve <Esc>:e $MYVIMRC<CR>
 map <leader>vs <Esc>:source $MYVIMRC<CR>
@@ -79,7 +82,7 @@ map ,# :s/^/#/<CR>
 let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
 
-map <leader>t :FuzzyFinderTextMate<CR>
+map <leader>f :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 
 " Project browser
@@ -91,7 +94,11 @@ cmap w!! %!sudo tee > /dev/null %
 noremap Y y$
 
 nnoremap Q gqap
-vnoremap Q gq
+nnoremap Q gq
+
+" visual shifting (reselection after shift)
+nnoremap < <gv
+nnoremap > >gv
 
 filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
