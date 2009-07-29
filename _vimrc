@@ -170,4 +170,6 @@ augroup END
 let g:GetLatestVimScripts_allowautoinstall=1
 let g:SuperTabDefaultCompletionType = "context"
 
+call TCommentDefineType('vhdl', '-- %s')
+
 " vim:et:ts=4:sts=4:sw=4:
