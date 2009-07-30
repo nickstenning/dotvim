@@ -175,5 +175,4 @@ let g:Tlist_Enable_Fold_Column = 0
 
 hi link MyTagListFileName Keyword
 
-
 " vim:et:ts=4:sts=4:sw=4:
