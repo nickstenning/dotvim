@@ -34,7 +34,7 @@ set nojoinspaces
 
 if has('gui')
     if has('gui_macvim')
-        set guifont=Monaco:h12.00
+        set guifont=Inconsolata:h14.00
     elseif has('gui_win32')
         set guifont=Inconsolata:h12.00
     endif
@@ -167,7 +167,13 @@ augroup lisp
     map <C-F10> /)<CR>
 augroup END
 
-let g:GetLatestVimScripts_allowautoinstall=1
+let g:GetLatestVimScripts_allowautoinstall = 1
 let g:SuperTabDefaultCompletionType = "context"
+
+let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Enable_Fold_Column = 0
+
+hi link MyTagListFileName Keyword
+
 
 " vim:et:ts=4:sts=4:sw=4:
