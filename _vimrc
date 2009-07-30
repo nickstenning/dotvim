@@ -170,9 +170,11 @@ augroup END
 let g:GetLatestVimScripts_allowautoinstall = 1
 let g:SuperTabDefaultCompletionType = "context"
 
+hi link MyTagListFileName Keyword
 let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Enable_Fold_Column = 0
-
-hi link MyTagListFileName Keyword
+if has('win32')
+    let Tlist_Ctags_Cmd = $HOME . '\vimfiles\ctags.exe'
+endif
 
 " vim:et:ts=4:sts=4:sw=4:
