@@ -1,1 +1,0 @@
-call TCommentDefineType('vhdl', '-- %s')
