@@ -1,3 +1,2 @@
-set columns=100
-set lines=48
-set go+=e
+set guioptions+=e
+set guifont=Inconsolata:h16.00
