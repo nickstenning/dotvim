@@ -1,10 +1,10 @@
 " .vimrc file
-  
-filetype off
-call pathogen#runtime_append_all_bundles()
 
 set nocompatible
 set encoding=utf-8
+  
+filetype off
+call pathogen#runtime_append_all_bundles()
 
 let mapleader=","
 
@@ -16,6 +16,7 @@ set hlsearch            " highlight search keys
 set visualbell          " don't beep, f*&%er
 set mouse=a             " mooooose support
 set pastetoggle=<F4>    " toggles paste mode
+set number              " line numbering
 set listchars=tab:>-,trail:-,eol:¶
 
 set tw=78
@@ -26,17 +27,15 @@ set smarttab
 set showmatch
 
 " Tab helpers
-map <leader>te <Esc>:set et<CR>
-map <leader>tn <Esc>:set noet<CR>
-map <leader>t2 <Esc>:set ts=2 sts=2 sw=2<CR>
-map <leader>t4 <Esc>:set ts=4 sts=4 sw=4<CR>
-map <leader>t8 <Esc>:set ts=8 sts=8 sw=8<CR>
+map <leader>ie <Esc>:set et<CR>
+map <leader>in <Esc>:set noet<CR>
+map <leader>i2 <Esc>:set ts=2 sts=2 sw=2<CR>
+map <leader>i4 <Esc>:set ts=4 sts=4 sw=4<CR>
+map <leader>i8 <Esc>:set ts=8 sts=8 sw=8<CR>
 
 " Helpers for editing this file
 nmap <leader>ve :tabedit $MYVIMRC<CR>
-if has("autocmd")
-    autocmd BufWritePost .vimrc source $MYVIMRC
-endif
+autocmd BufWritePost .vimrc source $MYVIMRC
 
 " Toggle search highlight
 map <leader>h <Esc>:set hls!<CR>
@@ -59,6 +58,12 @@ vnoremap Q gq
 vnoremap < <gv
 vnoremap > >gv
 
+" window jumping
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
 syntax on
 filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
@@ -71,20 +76,26 @@ autocmd filetype mkd set comments=n:>
 autocmd filetype mkd set sts=4 sw=4
 autocmd filetype python set sts=4 sw=4
 autocmd filetype javascript set sts=2 sw=2
+autocmd filetype css set sts=2 sw=2 noet
 
 let g:supertabdefaultcompletiontype = "context"
 let g:supertabmappingtabliteral = '<s-tab>'
 
-" taglist
-map <leader>tt <esc>:tlisttoggle<cr>
+" strip trailing
+autocmd FileType c,cpp,python,ruby,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
 
-let g:tlist_use_right_window = 1
-let g:tlist_enable_fold_column = 0
+" taglist
+map <leader>m <esc>:TlistToggle<cr>
+
+let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Enable_Fold_Column = 0
 
 hi link mytaglistfilename keyword
 
 " Project browser
+map <leader>p :NERDTreeFromBookmark 
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
-set t_RV=
+
 " vim:et:ts=4:sts=4:sw=4:

@@ -1,6 +1,3 @@
-[submodule "snippets"]
-  path = snippets
-  url = git://github.com/akitaonrails/snipmate-snippets.git
 [submodule "bundle/processing"]
   path = bundle/processing
   url = git://github.com/vim-scripts/Processing.git
@@ -18,7 +15,7 @@
   url = git://github.com/scrooloose/nerdtree.git
 [submodule "bundle/snipmate"]
   path = bundle/snipmate
-  url = git://github.com/vim-scripts/snipMate.git
+  url = git://github.com/msanders/snipmate.vim.git
 [submodule "bundle/surround"]
   path = bundle/surround
   url = git://github.com/vim-scripts/surround.vim.git
@@ -52,3 +49,15 @@
 [submodule "bundle/rails"]
   path = bundle/rails
   url = git://github.com/tpope/vim-rails.git
+[submodule "bundle/latex"]
+	path = bundle/latex
+	url = https://github.com/mineiro/vim-latex.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "bundle/json"]
+	path = bundle/json
+	url = https://github.com/leshill/vim-json.git
+[submodule "bundle/autotag"]
+	path = bundle/autotag
+	url = https://github.com/vim-scripts/AutoTag.git
