@@ -2,10 +2,9 @@
 
 set nocompatible
 set encoding=utf-8
-  
-filetype off
-call pathogen#runtime_append_all_bundles()
 
+call pathogen#infect()
+  
 let mapleader=","
 
 set nobackup            " do not keep a backup file
