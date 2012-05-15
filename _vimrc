@@ -68,8 +68,10 @@ filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
 filetype plugin on      " enable filetype-specific plugins
  
-colorscheme blackboard
-if $term =~ '^screen' && &t_co == 8 | set t_co=256 | endif
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
 autocmd filetype mkd set comments=n:>
 autocmd filetype mkd set sts=4 sw=4
