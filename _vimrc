@@ -4,7 +4,7 @@ set nocompatible
 set encoding=utf-8
 
 call pathogen#infect()
-  
+
 let mapleader=","
 
 set nobackup            " do not keep a backup file
@@ -67,7 +67,7 @@ syntax on
 filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
 filetype plugin on      " enable filetype-specific plugins
- 
+
 set t_Co=256
 let g:solarized_termcolors=256
 set background=dark
@@ -94,7 +94,7 @@ let g:Tlist_Enable_Fold_Column = 0
 hi link mytaglistfilename keyword
 
 " Project browser
-map <leader>p :NERDTreeFromBookmark 
+map <leader>p :NERDTreeFromBookmark
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
