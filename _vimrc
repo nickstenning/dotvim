@@ -84,6 +84,11 @@ let g:supertabmappingtabliteral = '<s-tab>'
 " strip trailing
 autocmd FileType c,cpp,puppet,python,ruby,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
 
+" Ack
+nnoremap <leader>a :Ack
+
+" fold focus
+nnoremap <leader>z zMzO
 
 " taglist
 map <leader>m <esc>:TlistToggle<cr>
