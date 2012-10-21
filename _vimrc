@@ -98,5 +98,15 @@ map <leader>p :NERDTreeFromBookmark
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
+if has("gui_running")
+    set guioptions+=e
+    set guifont=PragmataPro:h14.00
+
+    if has("mac")
+        macm File.Close key=<nop>
+        map <silent> <D-w> <Esc>:bd<CR>
+    endif
+endif
+
 
 " vim:et:ts=4:sts=4:sw=4:
