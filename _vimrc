@@ -16,6 +16,9 @@ set visualbell          " don't beep, f*&%er
 set mouse=a             " mooooose support
 set pastetoggle=<F4>    " toggles paste mode
 set number              " line numbering
+set autochdir           " automatically chdir to dir of cur file
+set title               " set term title
+set ttyfast
 
 set wildmenu
 set wildignore=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class
