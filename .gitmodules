@@ -91,3 +91,6 @@
 [submodule "bundle/csv"]
 	path = bundle/csv
 	url = git://github.com/chrisbra/csv.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
