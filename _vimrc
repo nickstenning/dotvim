@@ -16,6 +16,10 @@ set visualbell          " don't beep, f*&%er
 set mouse=a             " mooooose support
 set pastetoggle=<F4>    " toggles paste mode
 set number              " line numbering
+
+set wildmenu
+set wildignore=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class
+
 set listchars=tab:>-,trail:-,eol:¶
 
 set tw=78
