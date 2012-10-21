@@ -88,3 +88,6 @@
 [submodule "bundle/go"]
 	path = bundle/go
 	url = git://github.com/uggedal/go-vim.git
+[submodule "bundle/csv"]
+	path = bundle/csv
+	url = git://github.com/chrisbra/csv.vim.git
