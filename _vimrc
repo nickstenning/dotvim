@@ -32,16 +32,8 @@ set ts=2 sts=2 sw=2 expandtab
 set smarttab
 set showmatch
 
-" Tab helpers
-map <leader>ie <Esc>:set et<CR>
-map <leader>in <Esc>:set noet<CR>
-map <leader>i2 <Esc>:set ts=2 sts=2 sw=2<CR>
-map <leader>i4 <Esc>:set ts=4 sts=4 sw=4<CR>
-map <leader>i8 <Esc>:set ts=8 sts=8 sw=8<CR>
-
 " Helpers for editing this file
 nmap <leader>ve :tabedit $MYVIMRC<CR>
-autocmd BufWritePost .vimrc source $MYVIMRC
 
 " Toggle search highlight
 map <leader>h <Esc>:set hls!<CR>
@@ -49,14 +41,10 @@ map <leader>h <Esc>:set hls!<CR>
 " Toggle showing invisibles
 map <leader>l <Esc>:set list!<CR>
 
-" Fix whitespace
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
 " Sudo save from inside vim!
 cmap w!! %!sudo tee > /dev/null %
 
-noremap Y y$
-
+" Reformat para
 nnoremap Q gqap
 vnoremap Q gq
 
@@ -65,10 +53,10 @@ vnoremap < <gv
 vnoremap > >gv
 
 " window jumping
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-l> :wincmd l<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 syntax on
 filetype on             " enable filetype detection
@@ -101,7 +89,6 @@ let g:Tlist_Enable_Fold_Column = 0
 hi link mytaglistfilename keyword
 
 " Project browser
-map <leader>p :NERDTreeFromBookmark
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
