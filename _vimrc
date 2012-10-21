@@ -68,17 +68,22 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
-autocmd filetype mkd set comments=n:>
-autocmd filetype mkd set sts=4 sw=4
-autocmd filetype python set sts=4 sw=4
-autocmd filetype javascript set sts=2 sw=2
-autocmd filetype css set sts=2 sw=2 noet
+autocmd filetype mkd setlocal comments=n:> sts=4 sw=4
+autocmd filetype javascript setlocal sts=2 sw=2
+autocmd filetype css setlocal sts=2 sw=2 et
+
+autocmd filetype go setlocal noet
+
+autocmd filetype python setlocal sts=4 sw=4 et
+let g:pymode_lint_checker = "pyflakes"
+nnoremap <leader>i :RopeAutoImport<CR>
 
 let g:supertabdefaultcompletiontype = "context"
 let g:supertabmappingtabliteral = '<s-tab>'
 
 " strip trailing
-autocmd FileType c,cpp,python,ruby,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
+autocmd FileType c,cpp,puppet,python,ruby,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
+
 
 " taglist
 map <leader>m <esc>:TlistToggle<cr>
