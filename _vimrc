@@ -3,7 +3,9 @@
 set nocompatible
 set encoding=utf-8
 
-call pathogen#infect()
+if !exists("g:loaded_pathogen")
+    call pathogen#infect()
+endif
 
 let mapleader=","
 
