@@ -1,7 +1,7 @@
+# vim:noet
 [submodule "bundle/processing"]
 	path = bundle/processing
 	url = git://github.com/vim-scripts/Processing.git
-	ignore = dirty
 	ignore = dirty
 [submodule "bundle/supertab"]
 	path = bundle/supertab
@@ -127,4 +127,7 @@
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
 	ignore = dirty
-# vim:noet
+[submodule "bundle/yankstack"]
+	path = bundle/yankstack
+	url = git://github.com/maxbrunsfeld/vim-yankstack.git
+	ignore = dirty
