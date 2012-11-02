@@ -134,15 +134,10 @@ nnoremap <leader>n :call NumberToggle()<CR>
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
+" GUI settings
 if has("gui_running")
     set guioptions+=e
     set guifont=PragmataPro:h14.00
-
-    if has("gui_macvim")
-        macm File.Close key=<nop>
-        noremap <silent> <D-w> <Esc>:bd<CR>
-        noremap! <silent> <D-w> <Esc>:bd<CR>
-    endif
 endif
 
 " vim:et:ts=4:sts=4:sw=4:
