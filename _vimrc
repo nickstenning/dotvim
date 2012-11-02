@@ -10,7 +10,7 @@ endif
 let mapleader=","
 
 set foldlevelstart=99
-set formatoptions=acro2qj
+set formatoptions=acr2qj
 set hlsearch            " highlight search keys
 set incsearch           " do incremental searching
 set listchars=tab:>-,trail:-,eol:¶
