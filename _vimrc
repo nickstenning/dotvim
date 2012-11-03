@@ -118,21 +118,7 @@ nnoremap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
 " Relative numbering
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-
-nnoremap <leader>n :call NumberToggle()<CR>
-
-:au FocusLost * :set number
-:au FocusGained * :set relativenumber
-
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+let g:NumberToggleTrigger = "<leader>n"
 
 " GUI settings
 if has("gui_running")
