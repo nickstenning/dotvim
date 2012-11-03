@@ -13,7 +13,7 @@ set foldlevelstart=99
 set formatoptions=acr2qj
 set hlsearch            " highlight search keys
 set incsearch           " do incremental searching
-set listchars=tab:>-,trail:-,eol:¶
+set listchars=tab:>-,trail:-,eol:¬
 set mouse=a             " mooooose support
 set nobackup            " do not keep a backup file
 set nojoinspaces
