@@ -131,3 +131,7 @@
 	path = bundle/yankstack
 	url = git://github.com/maxbrunsfeld/vim-yankstack.git
 	ignore = dirty
+[submodule "bundle/numbertoggle"]
+	path = bundle/numbertoggle
+	url = git://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+	ignore = dirty
