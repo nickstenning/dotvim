@@ -14,7 +14,7 @@ set formatoptions=acr2qj
 set hlsearch            " highlight search keys
 set incsearch           " do incremental searching
 set listchars=tab:>-,trail:-,eol:¬
-set mouse=a             " mooooose support
+set mouse=a
 set nobackup            " do not keep a backup file
 set nojoinspaces
 set number              " line numbering
@@ -23,16 +23,18 @@ set ruler               " show the cursor position all the time
 set showmatch
 set smarttab
 set title               " set term title
-set ts=2 sts=2 sw=2 expandtab
 set ttyfast
 set tw=78
-set visualbell          " don't beep, f*&%er
+set visualbell
 set wildignore=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class
 set wildmenu
 
+if has("mac")
+    set macmeta         " use alt/option as meta
+endif
+
 " Helpers for editing this file
 nnoremap <leader>ve :tabedit $MYVIMRC<CR>
-
 " NB: the following ! is vital, and prevents this autocmd being set up once
 " for every save of the file.
 autocmd! bufwritepost .vimrc source $MYVIMRC
@@ -45,6 +47,9 @@ nnoremap <leader>l :set list!<CR>
 
 " Sudo save from inside vim!
 cmap w!! %!sudo tee > /dev/null %
+
+" Make Y behave like D, C, etc
+nnoremap Y y$
 
 " Reformat para
 nnoremap Q gqap
@@ -86,6 +91,10 @@ let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
 
+" default indentation
+set ts=2 sts=2 sw=2 expandtab
+
+" filetype customisation
 autocmd filetype css setlocal sts=2 sw=2 et
 autocmd filetype gitcommit setlocal fo+=t
 autocmd filetype go setlocal noet
@@ -121,9 +130,7 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 let g:NumberToggleTrigger = "<leader>n"
 
 " GUI settings
-if has("gui_running")
-    set guioptions+=e
-    set guifont=PragmataPro:h14.00
-endif
+set guioptions+=e
+set guifont=PragmataPro:h14.00
 
 " vim:et:ts=4:sts=4:sw=4:
