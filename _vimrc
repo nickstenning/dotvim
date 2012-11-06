@@ -82,14 +82,11 @@ nnoremap <leader>=> :Tab /=><cr>
 nnoremap <leader>=: :Tab /:<cr>
 
 syntax on
-filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
-" set t_Co=256
 let g:solarized_termcolors=256
-colorscheme solarized
 set background=dark
+colorscheme solarized
 
 " default indentation
 set ts=2 sts=2 sw=2 expandtab
@@ -106,7 +103,6 @@ autocmd filetype yaml setlocal ts=2 sts=2 sw=2 et
 
 autocmd filetype python setlocal sts=4 sw=4 et
 let g:pymode_lint_checker = "pyflakes"
-nnoremap <leader>i :RopeAutoImport<CR>
 
 let g:supertabdefaultcompletiontype = "context"
 let g:supertabmappingtabliteral = '<s-tab>'
