@@ -35,7 +35,7 @@ if has("mac")
 endif
 
 " Helpers for editing this file
-nnoremap <leader>ve :tabedit $MYVIMRC<CR>
+nnoremap <leader>ve :edit $MYVIMRC<CR>
 " NB: the following ! is vital, and prevents this autocmd being set up once
 " for every save of the file.
 autocmd! bufwritepost .vimrc source $MYVIMRC
@@ -65,6 +65,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" next/prev buffer
+noremap g] :bn<cr>
+noremap g[ :bp<cr>
 
 " Ack
 nnoremap <leader>a :Ack<space>
@@ -125,6 +129,11 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
 " Relative numbering
 let g:NumberToggleTrigger = "<leader>n"
+
+" minibufexpl mappings
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 
 " GUI settings
 set guioptions+=e
