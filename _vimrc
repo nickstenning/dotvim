@@ -11,6 +11,7 @@ let mapleader=","
 
 set foldlevelstart=99
 set formatoptions=acr2qj
+set hidden              " allow unsaved hidden buffers
 set hlsearch            " highlight search keys
 set incsearch           " do incremental searching
 set listchars=tab:>-,trail:-,eol:¬
