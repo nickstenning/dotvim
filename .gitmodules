@@ -147,3 +147,7 @@
 	path = bundle/textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
 	ignore = dirty
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = git://github.com/fholgado/minibufexpl.vim.git
+	ignore = dirty
