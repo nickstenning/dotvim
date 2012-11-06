@@ -95,10 +95,6 @@
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 	ignore = dirty
-[submodule "bundle/python"]
-	path = bundle/python
-	url = git://github.com/klen/python-mode.git
-	ignore = dirty
 [submodule "bundle/puppet"]
 	path = bundle/puppet
 	url = git://github.com/rodjek/vim-puppet.git
