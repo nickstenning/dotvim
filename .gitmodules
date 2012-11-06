@@ -147,3 +147,7 @@
 	path = bundle/minibufexpl
 	url = git://github.com/fholgado/minibufexpl.vim.git
 	ignore = dirty
+[submodule "bundle/indent-object"]
+	path = bundle/indent-object
+	url = git://github.com/michaeljsmith/vim-indent-object.git
+	ignore = dirty
