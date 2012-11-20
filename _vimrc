@@ -103,7 +103,7 @@ autocmd filetype go setlocal noet
 autocmd filetype javascript setlocal sts=2 sw=2
 autocmd filetype make setlocal ts=8 sts=8 sw=8 noet
 autocmd filetype mkd setlocal comments=n:> sts=4 sw=4 fo+=t
-autocmd filetype puppet setlocal cms="# %s"
+autocmd filetype puppet setlocal cms=#\ %s
 autocmd filetype text setlocal fo+=t
 autocmd filetype yaml setlocal ts=2 sts=2 sw=2 et
 
