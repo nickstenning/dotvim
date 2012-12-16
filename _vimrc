@@ -96,6 +96,9 @@ colorscheme solarized
 " default indentation
 set ts=2 sts=2 sw=2 expandtab
 
+" filetype detection
+autocmd bufread *.do setlocal ft=sh
+
 " filetype customisation
 autocmd filetype css setlocal sts=2 sw=2 et
 autocmd filetype gitcommit setlocal fo+=t
