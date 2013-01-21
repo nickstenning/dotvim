@@ -60,6 +60,9 @@ vnoremap Q gq
 vnoremap < <gv
 vnoremap > >gv
 
+" set local wd
+nnoremap <leader>cd :lcd %:h<CR>
+
 " window jumping
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
