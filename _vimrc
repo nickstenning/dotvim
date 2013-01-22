@@ -40,19 +40,37 @@ nnoremap <leader>ve :edit $MYVIMRC<CR>
 " for every save of the file.
 autocmd! bufwritepost .vimrc source $MYVIMRC
 
-" Clear search highlight
+nnoremap ; :
+
+" basic movement
+nnoremap k gk
+nnoremap j gj
+
+" window jumping
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" buffer navigation
+nnoremap <S-l> :bn<cr>
+nnoremap <S-h> :bp<cr>
+nnoremap ,b :ls<CR>:buffer<Space>
+nnoremap <C-b> :CtrlPBuffer<CR>
+
+" clear search highlight
 nnoremap <leader>h :nohlsearch<CR>
 
-" Toggle showing invisibles
+" toggle showing invisibles
 nnoremap <leader>l :set list!<CR>
 
-" Sudo save from inside vim!
+" sudo save from inside vim!
 cmap w!! %!sudo tee > /dev/null %
 
-" Make Y behave like D, C, etc
+" make Y behave like D, C, etc
 nnoremap Y y$
 
-" Reformat para
+" reformat para
 nnoremap Q gqap
 vnoremap Q gq
 
@@ -63,17 +81,7 @@ vnoremap > >gv
 " set local wd
 nnoremap <leader>cd :lcd %:h<CR>
 
-" window jumping
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" next/prev buffer
-noremap g] :MBEbn<cr>
-noremap g[ :MBEbp<cr>
-
-" Ack
+" ack
 nnoremap <leader>a :Ack<space>
 
 " folding
@@ -136,6 +144,17 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
 " Relative numbering
 let g:NumberToggleTrigger = "<leader>n"
+
+" Delete empty buffers, specially for files opened with --remote option. This
+" function ensures that any empty buffers get deleted immediately.
+autocmd BufAdd * :call <SID>DeleteBufferIfEmpty()
+function! s:DeleteBufferIfEmpty()
+    if bufname('%') == ''
+        bwipe
+        " This will trigger filetype detection, mainly to trigger syntax highlighting
+        doautocmd BufRead
+    endif
+endfunction
 
 " GUI settings
 set guioptions+=e
