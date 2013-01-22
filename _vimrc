@@ -137,11 +137,6 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 " Relative numbering
 let g:NumberToggleTrigger = "<leader>n"
 
-" minibufexpl mappings
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-
 " GUI settings
 set guioptions+=e
 set guifont=PragmataPro:h14.00

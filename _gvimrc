@@ -2,10 +2,4 @@ if has("gui_macvim")
     macm File.Close key=<nop>
     noremap  <silent> <D-w> <Esc>:bd<CR>
     noremap! <silent> <D-w> <Esc>:bd<CR>
-    macm Window.Select\ Next\ Tab key=<nop>
-    macm Window.Select\ Previous\ Tab key=<nop>
-    noremap  <silent> <D-}> <Esc>:MBEbn<CR>
-    noremap! <silent> <D-}> <Esc>:MBEbn<CR>
-    noremap  <silent> <D-{> <Esc>:MBEbp<CR>
-    noremap! <silent> <D-{> <Esc>:MBEbp<CR>
 endif
