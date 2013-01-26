@@ -30,10 +30,6 @@ set visualbell
 set wildignore=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class
 set wildmenu
 
-if has("mac")
-    set macmeta         " use alt/option as meta
-endif
-
 " Helpers for editing this file
 nnoremap <leader>ve :edit $MYVIMRC<CR>
 " NB: the following ! is vital, and prevents this autocmd being set up once
