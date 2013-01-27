@@ -36,7 +36,9 @@ nnoremap <leader>ve :edit $MYVIMRC<CR>
 " for every save of the file.
 autocmd! bufwritepost .vimrc source $MYVIMRC
 
+" swap : and ; (I use : far more frequently)
 nnoremap ; :
+nnoremap : ;
 
 " basic movement
 nnoremap k gk
