@@ -124,7 +124,7 @@ let g:supertabdefaultcompletiontype = "context"
 let g:supertabmappingtabliteral = '<s-tab>'
 
 " strip trailing
-autocmd FileType c,cpp,puppet,python,ruby,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
+autocmd FileType c,cpp,gitcommit,go,markdown,puppet,python,ruby,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
 
 " taglist
 nnoremap <leader>m :TlistToggle<cr>
