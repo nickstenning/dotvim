@@ -121,7 +121,7 @@
 	ignore = dirty
 [submodule "bundle/yankstack"]
 	path = bundle/yankstack
-	url = git://github.com/maxbrunsfeld/vim-yankstack.git
+	url = git@github.com:nickstenning/vim-yankstack.git
 	ignore = dirty
 [submodule "bundle/numbertoggle"]
 	path = bundle/numbertoggle

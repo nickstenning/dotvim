@@ -141,6 +141,9 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 " Relative numbering
 let g:NumberToggleTrigger = "<leader>n"
 
+" Custom yankstack yank keys (to avoid conflict with vim-seek)
+let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
+
 " Delete empty buffers, specially for files opened with --remote option. This
 " function ensures that any empty buffers get deleted immediately.
 autocmd BufAdd * :call <SID>DeleteBufferIfEmpty()
