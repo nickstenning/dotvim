@@ -51,8 +51,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " buffer navigation
-nnoremap <S-l> :bn<cr>
-nnoremap <S-h> :bp<cr>
 nnoremap ,b :ls<CR>:buffer<Space>
 nnoremap <C-b> :CtrlPBuffer<CR>
 
