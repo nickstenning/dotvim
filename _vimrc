@@ -61,7 +61,7 @@ nnoremap <leader>h :nohlsearch<CR>
 nnoremap <leader>l :set list!<CR>
 
 " sudo save from inside vim!
-cmap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo tee > /dev/null %
 
 " make Y behave like D, C, etc
 nnoremap Y y$
