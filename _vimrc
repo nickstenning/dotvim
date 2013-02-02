@@ -37,12 +37,12 @@ nnoremap <leader>ve :edit $MYVIMRC<CR>
 autocmd! bufwritepost .vimrc source $MYVIMRC
 
 " swap : and ; (I use : far more frequently)
-nnoremap ; :
-nnoremap : ;
+noremap ; :
+noremap : ;
 
 " basic movement
-nnoremap k gk
-nnoremap j gj
+noremap k gk
+noremap j gj
 
 " window jumping
 nnoremap <C-h> <C-w>h
