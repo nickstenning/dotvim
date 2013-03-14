@@ -8,6 +8,7 @@ if !exists("g:loaded_pathogen")
 endif
 
 set colorcolumn=+1
+set clipboard+=unnamed
 set foldlevelstart=99
 set formatoptions=cr2qj
 set hidden " allow unsaved hidden buffers
