@@ -7,91 +7,21 @@ if !exists("g:loaded_pathogen")
     call pathogen#infect()
 endif
 
-let mapleader=","
-
+set colorcolumn=+1
 set foldlevelstart=99
 set formatoptions=cr2qj
-set hidden              " allow unsaved hidden buffers
-set hlsearch            " highlight search keys
-set incsearch           " do incremental searching
-set listchars=tab:>-,trail:-,eol:¬
-set mouse=a
-set nobackup            " do not keep a backup file
+set hidden " allow unsaved hidden buffers
+set hlsearch
+set incsearch
+set listchars=tab:▸\ ,trail:-,extends:>,precedes:<
+set nobackup
 set nojoinspaces
-set number              " line numbering
-set pastetoggle=<F4>    " toggles paste mode
-set ruler               " show the cursor position all the time
-set showmatch
-set smarttab
-set title               " set term title
-set ttyfast
-set tw=78
-set visualbell
-set wildignore=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class
-set wildmenu
-
-" Helpers for editing this file
-nnoremap <leader>ve :edit $MYVIMRC<CR>
-" NB: the following ! is vital, and prevents this autocmd being set up once
-" for every save of the file.
-autocmd! bufwritepost .vimrc source $MYVIMRC
-
-" swap : and ; (I use : far more frequently)
-noremap ; :
-noremap : ;
-
-" basic movement
-noremap k gk
-noremap j gj
-
-" window jumping
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" buffer navigation
-nnoremap ,b :ls<CR>:buffer<Space>
-nnoremap <C-b> :CtrlPBuffer<CR>
-
-" clear search highlight
-nnoremap <leader>h :nohlsearch<CR>
-
-" toggle showing invisibles
-nnoremap <leader>l :set list!<CR>
-
-" sudo save from inside vim!
-cnoremap w!! %!sudo tee > /dev/null %
-
-" make Y behave like D, C, etc
-nnoremap Y y$
-
-" reformat para
-nnoremap Q gqap
-vnoremap Q gq
-
-" visual shifting (reselection after shift)
-vnoremap < <gv
-vnoremap > >gv
-
-" set local wd
-nnoremap <leader>cd :lcd %:h<CR>
-
-" ack
-nnoremap <leader>a :Ack<space>
-
-" folding
-nnoremap <space> za
-vnoremap <space> zf
-
-" fold focus
-nnoremap <leader>z zMzO
-vnoremap <leader>z zMzO
-
-" alignment
-nnoremap <leader>== :Tab /=<cr>
-nnoremap <leader>=> :Tab /=><cr>
-nnoremap <leader>=: :Tab /:<cr>
+set number " line numbering
+set pastetoggle=<F4>
+set ruler " show the cursor position all the time
+set tw=80
+set wildignore=*.o,*.pyc,*.pyo,*.bak
+set wildmode=longest,list
 
 syntax on
 filetype plugin indent on
@@ -107,17 +37,85 @@ set ts=2 sts=2 sw=2 expandtab
 autocmd bufread *.do setlocal ft=sh
 
 " filetype customisation
-autocmd filetype css setlocal sts=2 sw=2 et
-autocmd filetype gitcommit setlocal fo+=t
-autocmd filetype go setlocal noet
+autocmd filetype css        setlocal sts=2 sw=2 et
+autocmd filetype gitcommit  setlocal fo+=t
+autocmd filetype go         setlocal noet
 autocmd filetype javascript setlocal sts=2 sw=2
-autocmd filetype make setlocal ts=8 sts=8 sw=8 noet
-autocmd filetype markdown setlocal comments=n:> sts=4 sw=4 fo+=t fo-=a
-autocmd filetype puppet setlocal cms=#\ %s
-autocmd filetype text setlocal fo+=t
-autocmd filetype yaml setlocal ts=2 sts=2 sw=2 et
+autocmd filetype make       setlocal ts=8 sts=8 sw=8 noet
+autocmd filetype markdown   setlocal comments=n:> sts=4 sw=4 fo+=t fo-=a
+autocmd filetype puppet     setlocal cms=#\ %s
+autocmd filetype python     setlocal sts=4 sw=4 et
+autocmd filetype text       setlocal fo+=t
+autocmd filetype yaml       setlocal ts=2 sts=2 sw=2 et
 
-autocmd filetype python setlocal sts=4 sw=4 et
+" Helpers for editing this file
+nnoremap <leader>ve :execute(":edit ".resolve($MYVIMRC))<CR>
+" The ! prevents this autocmd being set up once for every save of the file
+autocmd! bufwritepost .vimrc,_vimrc execute("source ".resolve($MYVIMRC))
+
+" basic movement
+noremap k gk
+noremap j gj
+nnoremap <up> :echoe "use k"<CR>
+nnoremap <down> :echoe "use j"<CR>
+nnoremap <left> :echoe "use h"<CR>
+nnoremap <right> :echoe "use l"<CR>
+
+" windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" ack
+nnoremap <leader>a :Ack<space>
+
+" alignment
+nnoremap <leader>== :Tab /=<cr>
+nnoremap <leader>=> :Tab /=><cr>
+nnoremap <leader>=: :Tab /:\zs/l0r1<cr>
+nnoremap <leader>=, :Tab /,\zs/l0r1<cr>
+
+" buffer navigation
+nnoremap <leader>b :ls<CR>:buffer<Space>
+let g:ctrlp_cmd = 'CtrlPMixed'
+nnoremap <C-\> :CtrlPBuffer<CR>
+
+" cd: set local wd
+nnoremap <leader>cd :lcd %:h<CR>
+
+" folding
+nnoremap <space> za
+vnoremap <space> zf
+
+" fold focus
+nnoremap <leader>z zMzO
+vnoremap <leader>z zMzO
+
+" clear search highlight
+nnoremap <leader>h :nohlsearch<CR>
+
+" toggle showing invisibles
+nnoremap <leader>l :set list!<CR>
+
+" reformat para
+nnoremap Q gqap
+vnoremap Q gq
+
+" sudo save from inside vim!
+cnoremap w!! %!sudo tee > /dev/null %
+
+" visual shifting (reselection after shift)
+vnoremap < <gv
+vnoremap > >gv
+
+" yankstack
+nmap <Esc>p <Plug>yankstack_substitute_older_paste
+nmap <Esc>n <Plug>yankstack_substitute_newer_paste
+
+" make Y behave like D, C, etc
+nnoremap Y y$
+
 let g:pymode_lint_checker = "pyflakes"
 
 let g:supertabdefaultcompletiontype = "context"
@@ -128,11 +126,8 @@ autocmd FileType c,cpp,gitcommit,go,markdown,puppet,python,ruby,javascript autoc
 
 " taglist
 nnoremap <leader>m :TlistToggle<cr>
-
 let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Enable_Fold_Column = 0
-
-hi link mytaglistfilename keyword
 
 " Project browser
 nnoremap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
@@ -141,18 +136,12 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 " Relative numbering
 let g:NumberToggleTrigger = "<leader>n"
 
-" Custom yankstack yank keys (to avoid conflict with vim-seek)
-let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
+command! -nargs=+ ITerm :call ExecuteInITerm(<q-args>)
 
-" Delete empty buffers, specially for files opened with --remote option. This
-" function ensures that any empty buffers get deleted immediately.
-autocmd BufAdd * :call <SID>DeleteBufferIfEmpty()
-function! s:DeleteBufferIfEmpty()
-    if bufname('%') == ''
-        bwipe
-        " This will trigger filetype detection, mainly to trigger syntax highlighting
-        doautocmd BufRead
-    endif
+function! ExecuteInITerm(cmd)
+    let t:last_iterm_cmd = a:cmd
+    execute(":silent !iterm '".a:cmd."'")
+    redraw!
 endfunction
 
 " GUI settings
