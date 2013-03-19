@@ -138,12 +138,11 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 let g:NumberToggleTrigger = "<leader>n"
 
 command! -nargs=+ ITerm :call ExecuteInITerm(<q-args>)
-
 function! ExecuteInITerm(cmd)
-    let t:last_iterm_cmd = a:cmd
-    execute(":silent !iterm '".a:cmd."'")
+    execute(":silent !iterm '".a:cmd."' &")
     redraw!
 endfunction
+nnoremap <leader>t :call ExecuteInITerm("<C-v><C-[>OA")<CR>
 
 " GUI settings
 set guioptions+=e
