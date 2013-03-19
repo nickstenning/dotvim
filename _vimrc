@@ -83,7 +83,7 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 nnoremap <C-\> :CtrlPBuffer<CR>
 
 " cd: set local wd
-nnoremap <leader>cd :lcd %:h<CR>
+nnoremap <leader>cd :lcd %:h<CR>:echo getcwd()<CR>
 
 " folding
 nnoremap <space> za
