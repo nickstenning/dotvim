@@ -14,6 +14,7 @@ set formatoptions=cr2qj
 set hidden " allow unsaved hidden buffers
 set hlsearch
 set incsearch
+set list
 set listchars=tab:▸\ ,trail:-,extends:>,precedes:<
 set nobackup
 set nojoinspaces
