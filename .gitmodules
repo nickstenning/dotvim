@@ -85,7 +85,7 @@
 	ignore = dirty
 [submodule "bundle/puppet"]
 	path = bundle/puppet
-	url = git://github.com/rodjek/vim-puppet.git
+	url = git://github.com/evaryont/vim-puppet.git
 	ignore = dirty
 [submodule "bundle/vcl"]
 	path = bundle/vcl
