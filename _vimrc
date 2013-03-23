@@ -21,6 +21,7 @@ set nojoinspaces
 set number " line numbering
 set pastetoggle=<F4>
 set ruler " show the cursor position all the time
+set ttimeoutlen=50 " minimize delay leaving insert mode
 set tw=80
 set wildignore=*.o,*.pyc,*.pyo,*.bak
 set wildmode=longest,list

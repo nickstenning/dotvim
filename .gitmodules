@@ -135,3 +135,6 @@
 	path = bundle/indent-object
 	url = git://github.com/michaeljsmith/vim-indent-object.git
 	ignore = dirty
+[submodule "bundle/togglecursor"]
+	path = bundle/togglecursor
+	url = git://github.com/jszakmeister/vim-togglecursor.git
