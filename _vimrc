@@ -81,7 +81,6 @@ nnoremap <leader>=, :Tab /,\zs/l0r1<cr>
 
 " buffer navigation
 nnoremap <leader>b :ls<CR>:buffer<Space>
-let g:ctrlp_cmd = 'CtrlPMixed'
 nnoremap <C-\> :CtrlPBuffer<CR>
 
 " cd: set local wd
