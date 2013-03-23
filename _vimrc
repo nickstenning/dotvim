@@ -52,7 +52,7 @@ autocmd filetype text       setlocal fo+=t
 autocmd filetype yaml       setlocal ts=2 sts=2 sw=2 et
 
 " Helpers for editing this file
-nnoremap <leader>ve :execute(":edit ".resolve($MYVIMRC))<CR>
+nnoremap <leader>ve :execute("edit ".resolve($MYVIMRC))<CR>
 " The ! prevents this autocmd being set up once for every save of the file
 autocmd! bufwritepost .vimrc,_vimrc execute("source ".resolve($MYVIMRC))
 
