@@ -118,10 +118,8 @@ nmap <Esc>n <Plug>yankstack_substitute_newer_paste
 " make Y behave like D, C, etc
 nnoremap Y y$
 
-let g:pymode_lint_checker = "pyflakes"
-
-let g:supertabdefaultcompletiontype = "context"
-let g:supertabmappingtabliteral = '<s-tab>'
+" choose how to complete based on context
+let g:superTabDefaultCompletionType = 'context'
 
 " strip trailing
 autocmd FileType c,cpp,gitcommit,go,markdown,puppet,python,ruby,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
