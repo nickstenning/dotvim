@@ -42,7 +42,7 @@ autocmd bufread *.do setlocal ft=sh
 " filetype customisation
 autocmd filetype css        setlocal sts=2 sw=2 et
 autocmd filetype gitcommit  setlocal fo+=t
-autocmd filetype go         setlocal noet
+autocmd filetype go         setlocal noet nolist
 autocmd filetype javascript setlocal sts=2 sw=2
 autocmd filetype make       setlocal ts=8 sts=8 sw=8 noet
 autocmd filetype markdown   setlocal comments=n:> sts=4 sw=4 fo+=t fo-=a
