@@ -144,6 +144,9 @@ function! ExecuteInITerm(cmd)
 endfunction
 nnoremap <leader>t :call ExecuteInITerm("<C-v><C-[>OA")<CR>
 
+" Syntastic: JSL conf file
+let g:syntastic_javascript_jsl_conf = "~/.vim/jsl.conf"
+
 " GUI settings
 set guioptions+=e
 set guifont=PragmataPro:h14.00
