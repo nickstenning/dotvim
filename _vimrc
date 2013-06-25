@@ -49,6 +49,7 @@ autocmd filetype markdown   setlocal comments=n:> sts=4 sw=4 fo+=t fo-=a
 autocmd filetype puppet     setlocal cms=#\ %s
 autocmd filetype python     setlocal sts=4 sw=4 et
 autocmd filetype text       setlocal fo+=t
+autocmd filetype rst        setlocal fo+=t
 autocmd filetype yaml       setlocal ts=2 sts=2 sw=2 et
 
 " Helpers for editing this file
@@ -122,7 +123,7 @@ nnoremap Y y$
 let g:superTabDefaultCompletionType = 'context'
 
 " strip trailing
-autocmd FileType c,cpp,gitcommit,go,markdown,puppet,python,ruby,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
+autocmd FileType c,coffee,cpp,gitcommit,go,html,markdown,puppet,python,ruby,rst,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
 
 " taglist
 nnoremap <leader>m :TlistToggle<cr>
