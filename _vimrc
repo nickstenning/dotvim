@@ -41,13 +41,13 @@ autocmd bufread *.do setlocal ft=sh
 
 " filetype customisation
 autocmd filetype css        setlocal sts=2 sw=2 et
-autocmd filetype gitcommit  setlocal fo+=t
+autocmd filetype gitcommit  setlocal fo+=t tw=72
 autocmd filetype go         setlocal noet nolist
 autocmd filetype javascript setlocal sts=2 sw=2
 autocmd filetype make       setlocal ts=8 sts=8 sw=8 noet
 autocmd filetype markdown   setlocal comments=n:> sts=4 sw=4 fo+=t fo-=a
 autocmd filetype puppet     setlocal cms=#\ %s
-autocmd filetype python     setlocal sts=4 sw=4 et
+autocmd filetype python     setlocal sts=4 sw=4 et tw=79
 autocmd filetype text       setlocal fo+=t
 autocmd filetype rst        setlocal fo+=t
 autocmd filetype yaml       setlocal ts=2 sts=2 sw=2 et
