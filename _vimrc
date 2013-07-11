@@ -23,7 +23,7 @@ set pastetoggle=<F4>
 set ruler " show the cursor position all the time
 set ttimeoutlen=50 " minimize delay leaving insert mode
 set tw=80
-set wildignore=*.o,*.pyc,*.pyo,*.bak
+set wildignore=*.o,*.pyc,*.pyo,*.bak,*.map
 set wildmode=longest,list
 
 syntax on
