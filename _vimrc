@@ -83,6 +83,7 @@ nnoremap <leader>=, :Tab /,\zs/l0r1<cr>
 " buffer navigation
 nnoremap <leader>b :ls<CR>:buffer<Space>
 nnoremap <C-\> :CtrlPBuffer<CR>
+nnoremap <C-P> :CtrlPLastMode --dir<CR>
 
 " cd: set local wd
 nnoremap <leader>cd :lcd %:h<CR>:echo getcwd()<CR>
