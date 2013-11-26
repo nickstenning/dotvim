@@ -14,33 +14,29 @@ Bundle 'chrisbra/csv.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'jszakmeister/vim-togglecursor'
+Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'leshill/vim-json'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mileszs/ack.vim'
 Bundle 'mineiro/vim-latex'
-Bundle 'msanders/snipmate.vim'
+Bundle 'garbas/vim-snipmate'
 Bundle 'nickstenning/vim-yankstack'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rodjek/vim-puppet'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'smerrill/vcl-vim-plugin'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-pastie'
 Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
 Bundle 'uggedal/go-vim'
-Bundle 'vim-scripts/AutoTag'
-Bundle 'vim-scripts/gnupg'
-Bundle 'vim-scripts/surround.vim'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/textobj-entire'
+Bundle 'AutoTag'
+Bundle 'gnupg'
+Bundle 'taglist.vim'
 
 set colorcolumn=+1
 set clipboard+=unnamed
@@ -72,7 +68,8 @@ colorscheme solarized
 set ts=2 sts=2 sw=2 expandtab
 
 " filetype detection
-autocmd bufread *.do setlocal ft=sh
+autocmd bufnewfile,bufread *.do   setlocal ft=sh
+autocmd bufnewfile,bufread *.json setlocal ft=javascript
 
 " filetype customisation
 autocmd filetype css        setlocal sts=2 sw=2 et
