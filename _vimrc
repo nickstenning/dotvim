@@ -2,10 +2,45 @@
 
 set nocompatible
 set encoding=utf-8
+filetype off
 
-if !exists("g:loaded_pathogen")
-    call pathogen#infect()
-endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'chrisbra/csv.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Bundle 'jszakmeister/vim-togglecursor'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'leshill/vim-json'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'mileszs/ack.vim'
+Bundle 'mineiro/vim-latex'
+Bundle 'msanders/snipmate.vim'
+Bundle 'nickstenning/vim-yankstack'
+Bundle 'pangloss/vim-javascript'
+Bundle 'rodjek/vim-puppet'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'smerrill/vcl-vim-plugin'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-pastie'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'uggedal/go-vim'
+Bundle 'vim-scripts/AutoTag'
+Bundle 'vim-scripts/gnupg'
+Bundle 'vim-scripts/surround.vim'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/textobj-entire'
 
 set colorcolumn=+1
 set clipboard+=unnamed
