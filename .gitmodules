@@ -138,3 +138,6 @@
 [submodule "bundle/togglecursor"]
 	path = bundle/togglecursor
 	url = https://github.com/jszakmeister/vim-togglecursor.git
+[submodule "bundle/vundle"]
+	path = bundle/vundle
+	url = https://github.com/gmarik/vundle.git
