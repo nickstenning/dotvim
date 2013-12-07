@@ -159,7 +159,7 @@ nmap <Esc>n <Plug>yankstack_substitute_newer_paste
 nnoremap Y y$
 
 " strip trailing
-autocmd FileType c,coffee,cpp,gitcommit,go,html,markdown,puppet,python,ruby,rst,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
+autocmd FileType c,coffee,cpp,gitcommit,go,html,markdown,puppet,python,ruby,rst,javascript,yaml autocmd BufWritePre <buffer> silent! %s/\s\+$//
 
 " taglist
 nnoremap <leader>m :TlistToggle<cr>
