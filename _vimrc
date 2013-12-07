@@ -9,8 +9,12 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+" GitHub
+Bundle 'SirVer/ultisnips'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chrisbra/csv.vim'
+Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'godlygeek/tabular'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'jszakmeister/vim-togglecursor'
@@ -26,7 +30,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'rodjek/vim-puppet'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
+Bundle 'stephpy/vim-yaml'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
@@ -34,6 +38,8 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'uggedal/go-vim'
+
+" vim-scripts
 Bundle 'AutoTag'
 Bundle 'gnupg'
 Bundle 'taglist.vim'
