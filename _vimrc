@@ -181,6 +181,7 @@ endfunction
 nnoremap <leader>t :call ExecuteInITerm("<C-v><C-[>OA")<CR>
 
 " Syntastic: JSL conf file
+let g:syntastic_javascript_checkers = ['jsl']
 let g:syntastic_javascript_jsl_conf = "~/.vim/jsl.conf"
 
 " GUI settings
