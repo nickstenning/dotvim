@@ -158,9 +158,6 @@ nmap <Esc>n <Plug>yankstack_substitute_newer_paste
 " make Y behave like D, C, etc
 nnoremap Y y$
 
-" choose how to complete based on context
-let g:superTabDefaultCompletionType = 'context'
-
 " strip trailing
 autocmd FileType c,coffee,cpp,gitcommit,go,html,markdown,puppet,python,ruby,rst,javascript autocmd BufWritePre <buffer> silent! %s/\s\+$//
 
