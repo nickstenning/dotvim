@@ -1,5 +1,3 @@
 /.VimballRecord
 /.netrwhist
 tags
-/bundle/**
-!/bundle/vundle
