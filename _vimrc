@@ -47,7 +47,11 @@ Bundle 'taglist.vim'
 set colorcolumn=+1
 set clipboard+=unnamed
 set foldlevelstart=99
-set formatoptions=cr2qj
+try
+    set formatoptions=cr2qj
+catch /E539/
+    set formatoptions=cr2q
+endtry
 set hidden " allow unsaved hidden buffers
 set hlsearch
 set incsearch
