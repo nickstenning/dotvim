@@ -23,7 +23,6 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'mileszs/ack.vim'
 Bundle 'mineiro/vim-latex'
 Bundle 'nickstenning/vim-yankstack'
 Bundle 'pangloss/vim-javascript'
@@ -113,8 +112,18 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" ack
-nnoremap <leader>a :Ack<space>
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects
+  " .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " alignment
 nnoremap <leader>== :Tab /=<cr>
