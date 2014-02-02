@@ -22,6 +22,7 @@ Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
+Bundle 'mhinz/vim-signify'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mineiro/vim-latex'
 Bundle 'nickstenning/vim-yankstack'
@@ -69,6 +70,7 @@ syntax enable
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+highlight clear SignColumn
 
 " default indentation
 set ts=2 sts=2 sw=2 expandtab
