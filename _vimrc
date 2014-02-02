@@ -103,12 +103,6 @@ nnoremap <down> :echoe "use j"<CR>
 nnoremap <left> :echoe "use h"<CR>
 nnoremap <right> :echoe "use l"<CR>
 
-" windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
