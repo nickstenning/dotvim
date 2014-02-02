@@ -185,6 +185,9 @@ nnoremap <leader>t :call ExecuteInITerm("<C-v><C-[>OA")<CR>
 let g:syntastic_javascript_checkers = ['jsl']
 let g:syntastic_javascript_jsl_conf = "~/.vim/jsl.conf"
 
+" Ultisnips
+let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
+
 " GUI settings
 set guioptions+=e
 set guifont=PragmataPro:h14.00
