@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 " GitHub
 Bundle 'SirVer/ultisnips'
 "Bundle 'Valloric/YouCompleteMe'
+Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chrisbra/csv.vim'
 Bundle 'evanmiller/nginx-vim-syntax'
@@ -71,6 +72,10 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 highlight clear SignColumn
+
+if has("Mac")
+    let g:airline_powerline_fonts = 1
+endif
 
 " default indentation
 set ts=2 sts=2 sw=2 expandtab
