@@ -1,7 +1,6 @@
 " .vimrc file
 
 set nocompatible
-set encoding=utf-8
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -36,6 +35,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'uggedal/go-vim'
@@ -55,21 +55,16 @@ catch /E539/
 endtry
 set hidden " allow unsaved hidden buffers
 set hlsearch
-set incsearch
 set list
-set listchars=tab:▸\ ,trail:·,extends:»,precedes:«
 set nobackup
 set nojoinspaces
 set number " line numbering
 set pastetoggle=<F4>
-set ruler " show the cursor position all the time
-set ttimeoutlen=50 " minimize delay leaving insert mode
 set tw=80
 set wildignore=*.o,*.pyc,*.pyo,*.bak,*.map
 set wildmode=longest,list
 
-syntax on
-filetype plugin indent on
+syntax enable
 
 let g:solarized_termcolors=256
 set background=dark
@@ -184,9 +179,6 @@ let g:Tlist_Enable_Fold_Column = 0
 " Project browser
 nnoremap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
-
-" Relative numbering
-let g:NumberToggleTrigger = "<leader>n"
 
 command! -nargs=+ ITerm :call ExecuteInITerm(<q-args>)
 function! ExecuteInITerm(cmd)
