@@ -29,6 +29,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'mhinz/vim-signify'
 Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
