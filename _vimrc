@@ -3,10 +3,10 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " GitHub
 Bundle 'SirVer/ultisnips'
@@ -46,6 +46,9 @@ Bundle 'uggedal/go-vim'
 Bundle 'AutoTag'
 Bundle 'gnupg'
 Bundle 'taglist.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 set colorcolumn=+1
 set clipboard+=unnamed
