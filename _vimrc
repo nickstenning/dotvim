@@ -16,6 +16,7 @@ Bundle 'chase/vim-ansible-yaml'
 Bundle 'chrisbra/csv.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
+Bundle 'fatih/vim-go'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
@@ -38,7 +39,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'uggedal/go-vim'
 
 call vundle#end()
 filetype plugin indent on
