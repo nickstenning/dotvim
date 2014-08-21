@@ -10,12 +10,13 @@ Plugin 'gmarik/Vundle.vim'
 
 " GitHub
 Bundle 'SirVer/ultisnips'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'chrisbra/csv.vim'
 Bundle 'evanmiller/nginx-vim-syntax'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
@@ -191,13 +192,17 @@ function! ExecuteInITerm(cmd)
 endfunction
 nnoremap <leader>t :call ExecuteInITerm("<C-v><C-[>OA")<CR>
 
+" Supertab
+let g:SuperTabDefaultCompletionType = 'context'
+
+" Jedi
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#popup_on_dot = 0
+
 " Syntastic
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_javascript_checkers = ['jsl']
 let g:syntastic_javascript_jsl_conf = "~/.vim/jsl.conf"
-
-" Ultisnips
-let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
 
 " GUI settings
 set guioptions+=e
