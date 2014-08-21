@@ -33,6 +33,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
@@ -172,13 +173,6 @@ autocmd FileType c,coffee,cpp,gitcommit,go,html,markdown,puppet,python,ruby,rst,
 " Project browser
 nnoremap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
-
-command! -nargs=+ ITerm :call ExecuteInITerm(<q-args>)
-function! ExecuteInITerm(cmd)
-    execute(":silent !iterm '".a:cmd."' &")
-    redraw!
-endfunction
-nnoremap <leader>t :call ExecuteInITerm("<C-v><C-[>OA")<CR>
 
 " Supertab
 let g:SuperTabDefaultCompletionType = 'context'
