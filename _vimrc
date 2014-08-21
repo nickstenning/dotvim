@@ -14,7 +14,6 @@ Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'chrisbra/csv.vim'
-Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
@@ -27,10 +26,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'mineiro/vim-latex'
 Bundle 'nickstenning/vim-yankstack'
 Bundle 'pangloss/vim-javascript'
-Bundle 'rodjek/vim-puppet'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-commentary'
@@ -42,11 +39,6 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'uggedal/go-vim'
-
-" vim-scripts
-Bundle 'AutoTag'
-Bundle 'gnupg'
-Bundle 'taglist.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -175,11 +167,6 @@ nnoremap Y y$
 
 " strip trailing
 autocmd FileType c,coffee,cpp,gitcommit,go,html,markdown,puppet,python,ruby,rst,javascript,yaml autocmd BufWritePre <buffer> silent! %s/\s\+$//
-
-" taglist
-nnoremap <leader>m :TlistToggle<cr>
-let g:Tlist_Use_Right_Window = 1
-let g:Tlist_Enable_Fold_Column = 0
 
 " Project browser
 nnoremap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
