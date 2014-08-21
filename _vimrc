@@ -106,6 +106,8 @@ nnoremap <down> :echoe "use j"<CR>
 nnoremap <left> :echoe "use h"<CR>
 nnoremap <right> :echoe "use l"<CR>
 
+command! -bar -nargs=? -bang Scratch :silent enew<bang>|set buftype=nofile bufhidden=hide noswapfile buflisted filetype=<args> modifiable
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
