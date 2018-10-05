@@ -1,7 +1,0 @@
-#!/bin/sh
-
-cd "$(dirname "$0")"
-
-ln -sfn "$PWD" ~/.vim
-ln -sfn ~/.vim/_vimrc ~/.vimrc
-ln -sfn ~/.vim/_gvimrc ~/.gvimrc
