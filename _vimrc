@@ -65,6 +65,8 @@ set nobackup
 set nojoinspaces
 set number " line numbering
 set pastetoggle=<F4>
+set splitbelow
+set splitright
 set tw=80
 set wildignore=*.o,*.pyc,*.pyo,*.bak,*.map
 set wildmode=longest,list
