@@ -78,9 +78,7 @@ set background=dark
 silent! colorscheme solarized
 highlight clear SignColumn
 
-if has("Mac")
-    let g:airline_powerline_fonts = 1
-endif
+let g:airline_powerline_fonts = 1
 
 " default indentation
 set ts=2 sts=2 sw=2 expandtab
