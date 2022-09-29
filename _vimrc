@@ -178,6 +178,11 @@ autocmd FileType c,coffee,cpp,gitcommit,go,html,markdown,puppet,python,ruby,rst,
 nnoremap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
+" Python
+if filereadable(expand("~/.virtualenvs/nvim/bin/python"))
+    let g:python3_host_prog = expand("~/.virtualenvs/nvim/bin/python")
+endif
+
 " Supertab
 let g:SuperTabDefaultCompletionType = 'context'
 
