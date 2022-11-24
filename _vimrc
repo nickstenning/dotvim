@@ -12,31 +12,25 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-Plugin 'cespare/vim-go-templates'
-Plugin 'chase/vim-ansible-yaml'
 Plugin 'chrisbra/csv.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'dense-analysis/ale'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
-Plugin 'groenewege/vim-less'
 Plugin 'honza/vim-snippets'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-user'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-signify'
 Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
@@ -46,6 +40,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'vimoutliner/vimoutliner'
 
 call vundle#end()
 filetype plugin indent on
@@ -79,6 +74,7 @@ silent! colorscheme solarized
 highlight clear SignColumn
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
 
 " default indentation
 set ts=2 sts=2 sw=2 expandtab
@@ -115,11 +111,12 @@ command! -bar -nargs=? -bang Scratch :silent enew<bang>|set buftype=nofile bufhi
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --vimgrep\ $*
+  set grepformat=%f:%l:%c:%m
 
   " Use ag in CtrlP for listing files. Lightning fast and respects
   " .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=.git -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -165,17 +162,16 @@ vnoremap < <gv
 vnoremap > >gv
 
 " yankstack
+let g:yankstack_map_keys = 0
 nmap <Esc>p <Plug>yankstack_substitute_older_paste
 nmap <Esc>n <Plug>yankstack_substitute_newer_paste
+call yankstack#setup()
 
 " make Y behave like D, C, etc
 nnoremap Y y$
 
-" strip trailing
-autocmd FileType c,coffee,cpp,gitcommit,go,html,markdown,puppet,python,ruby,rst,javascript,yaml autocmd BufWritePre <buffer> silent! %s/\s\+$//
-
 " Project browser
-nnoremap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+" nnoremap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
 " Python
@@ -183,17 +179,19 @@ if filereadable(expand("~/.virtualenvs/nvim/bin/python"))
     let g:python3_host_prog = expand("~/.virtualenvs/nvim/bin/python")
 endif
 
+" ALE
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black'],
+\}
+let g:ale_fix_on_save = 1
+
 " Supertab
 let g:SuperTabDefaultCompletionType = 'context'
 
 " Jedi
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#popup_on_dot = 0
-
-" Syntastic
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_javascript_checkers = ['jsl']
-let g:syntastic_javascript_jsl_conf = "~/.vim/jsl.conf"
 
 " GUI settings
 set guioptions+=e
