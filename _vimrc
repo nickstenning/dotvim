@@ -28,6 +28,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-signify'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'pangloss/vim-javascript'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
@@ -92,6 +93,7 @@ autocmd filetype puppet     setlocal cms=#\ %s
 autocmd filetype python     setlocal tw=79
 autocmd filetype text       setlocal fo+=t
 autocmd filetype rst        setlocal fo+=t
+autocmd filetype rust       setlocal omnifunc=ale#completion#OmniFunc
 
 " Helpers for editing this file
 nnoremap <leader>ve :execute("edit ".resolve($MYVIMRC))<CR>
@@ -180,11 +182,16 @@ if filereadable(expand("~/.virtualenvs/nvim/bin/python"))
 endif
 
 " ALE
+let g:ale_linters = {
+\   'rust': ['analyzer'],
+\}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black'],
+\   'rust': ['rustfmt'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_rust_analyzer_executable = trim(system('rustup which rust-analyzer'))
 
 " Supertab
 let g:SuperTabDefaultCompletionType = 'context'
