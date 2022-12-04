@@ -110,17 +110,17 @@ nnoremap <right> :echoe "use l"<CR>
 
 command! -bar -nargs=? -bang Scratch :silent enew<bang>|set buftype=nofile bufhidden=hide noswapfile buflisted filetype=<args> modifiable
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --vimgrep\ $*
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
   set grepformat=%f:%l:%c:%m
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects
-  " .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=.git -g ""'
+  let g:ctrlp_user_command = 'rg %s --files --color never --hidden --glob "!.git/*"'
+  let g:ctrlp_use_caching = 0
+elseif executable('ag')
+  set grepprg=ag\ --vimgrep
+  set grepformat=%f:%l:%c:%m
 
-  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=.git -g ""'
   let g:ctrlp_use_caching = 0
 endif
 
