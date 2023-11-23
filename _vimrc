@@ -88,6 +88,7 @@ autocmd bufnewfile,bufread *.json setlocal ft=javascript
 " filetype customisation
 autocmd filetype gitcommit  setlocal fo+=t tw=72
 autocmd filetype go         setlocal nolist
+autocmd filetype go         nmap <leader>d <Plug>(go-def)
 autocmd filetype mail       setlocal fo+=aw
 autocmd filetype markdown   setlocal comments=n:> fo+=t fo-=a
 autocmd filetype puppet     setlocal cms=#\ %s
