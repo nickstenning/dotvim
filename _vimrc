@@ -185,10 +185,11 @@ endif
 " ALE
 let g:ale_linters = {
 \   'rust': ['analyzer'],
+\   'python': ['ruff', 'pyright'],
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black'],
+\   'python': ['ruff_format'],
 \   'rust': ['rustfmt'],
 \}
 let g:ale_fix_on_save = 1
