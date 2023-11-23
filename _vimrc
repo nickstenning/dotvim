@@ -28,6 +28,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-signify'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'pangloss/vim-javascript'
+Plugin 'preservim/tagbar'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-abolish'
@@ -195,6 +196,9 @@ let g:ale_rust_analyzer_executable = trim(system('rustup which rust-analyzer'))
 
 " Supertab
 let g:SuperTabDefaultCompletionType = 'context'
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " Jedi
 let g:jedi#auto_vim_configuration = 0
