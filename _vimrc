@@ -98,6 +98,9 @@ autocmd filetype text       setlocal fo+=t
 autocmd filetype rst        setlocal fo+=t
 autocmd filetype rust       setlocal omnifunc=ale#completion#OmniFunc
 
+" project-specific settings
+autocmd BufRead,BufNewFile ~/src/replicate-web/** let g:ale_command_wrapper = '~/src/replicate-web/script/run web'
+
 " Helpers for editing this file
 nnoremap <leader>ve :execute("edit ".resolve($MYVIMRC))<CR>
 " The ! prevents this autocmd being set up once for every save of the file
