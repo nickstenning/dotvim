@@ -190,10 +190,12 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'go': ['gofmt', 'goimports'],
 \   'python': ['ruff_format'],
 \   'rust': ['rustfmt'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_go_golangci_lint_package = 1
 let g:ale_rust_analyzer_executable = trim(system('rustup which rust-analyzer'))
 
 " Supertab
