@@ -200,6 +200,7 @@ let g:ale_fixers = {
 \   'terraform': ['terraform'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_go_golangci_lint_executable = "go run github.com/golangci/golangci-lint/cmd/golangci-lint@latest"
 let g:ale_go_golangci_lint_package = 1
 let g:ale_rust_analyzer_executable = trim(system('rustup which rust-analyzer'))
 
