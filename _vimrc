@@ -21,6 +21,7 @@ Plugin 'fatih/vim-go'
 Plugin 'github/copilot.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
+Plugin 'hashivim/vim-terraform'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'kana/vim-textobj-entire'
@@ -196,6 +197,7 @@ let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports'],
 \   'python': ['ruff_format'],
 \   'rust': ['rustfmt'],
+\   'terraform': ['terraform'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_go_golangci_lint_package = 1
