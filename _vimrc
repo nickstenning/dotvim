@@ -102,7 +102,7 @@ autocmd filetype rust       setlocal omnifunc=ale#completion#OmniFunc
 autocmd BufRead,BufNewFile ~/src/replicate-web/** let g:ale_command_wrapper = '~/src/replicate-web/script/run web'
 
 " Helpers for editing this file
-nnoremap <leader>ve :execute("edit ".resolve($MYVIMRC))<CR>
+nnoremap <leader>ve :execute("edit ~/.vimrc")<CR>
 " The ! prevents this autocmd being set up once for every save of the file
 autocmd! bufwritepost .vimrc,_vimrc execute("source ".resolve($MYVIMRC))
 
@@ -183,8 +183,8 @@ nnoremap Y y$
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$']
 
 " Python
-if filereadable(expand("~/.virtualenvs/nvim/bin/python"))
-    let g:python3_host_prog = expand("~/.virtualenvs/nvim/bin/python")
+if filereadable(expand("~/.venv/nvim/bin/python"))
+    let g:python3_host_prog = expand("~/.venv/nvim/bin/python")
 endif
 
 " ALE
