@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " GitHub
 Plugin 'SirVer/ultisnips'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'rebelot/kanagawa.nvim'
 Plugin 'bling/vim-airline'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -71,9 +71,8 @@ set wildmode=longest,list
 
 syntax enable
 
-let g:solarized_termcolors=256
 set background=dark
-silent! colorscheme solarized
+silent! colorscheme kanagawa
 highlight clear SignColumn
 
 let g:airline_powerline_fonts = 1
