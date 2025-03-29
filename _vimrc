@@ -1,53 +1,56 @@
 " .vimrc file
 
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin()
+
+Plug 'junegunn/vim-plug'
 
 " GitHub
-Plugin 'SirVer/ultisnips'
-Plugin 'rebelot/kanagawa.nvim'
-Plugin 'bling/vim-airline'
-Plugin 'chrisbra/csv.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'dense-analysis/ale'
-Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
-Plugin 'github/copilot.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
-Plugin 'hashivim/vim-terraform'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'jszakmeister/vim-togglecursor'
-Plugin 'kana/vim-textobj-entire'
-Plugin 'kana/vim-textobj-user'
-Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'mhinz/vim-signify'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'pangloss/vim-javascript'
-Plugin 'preservim/tagbar'
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vimoutliner/vimoutliner'
+Plug 'SirVer/ultisnips'
+Plug 'rebelot/kanagawa.nvim'
+Plug 'bling/vim-airline'
+Plug 'chrisbra/csv.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'dense-analysis/ale'
+Plug 'ervandew/supertab'
+Plug 'fatih/vim-go'
+Plug 'github/copilot.vim'
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
+Plug 'hashivim/vim-terraform'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jszakmeister/vim-togglecursor'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-user'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'mhinz/vim-signify'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'pangloss/vim-javascript'
+Plug 'preservim/tagbar'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vimoutliner/vimoutliner'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 set colorcolumn=+1
 set clipboard+=unnamed
@@ -69,8 +72,6 @@ set splitright
 set tw=80
 set wildignore=*.o,*.pyc,*.pyo,*.bak,*.map
 set wildmode=longest,list
-
-syntax enable
 
 set background=dark
 silent! colorscheme kanagawa
